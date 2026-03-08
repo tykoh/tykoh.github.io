@@ -1,21 +1,18 @@
 ---
 const purchaseLinks = [
   {
-    label: 'Apple Books',
-    href: 'https://books.apple.com/us/book/beyond-comfort-zone/id6747948379',
-    icon: 'apple',
-  },
-  {
     label: 'Amazon Kindle',
     href: 'https://www.amazon.com/Beyond-Comfort-Zone-TY-Koh-ebook/dp/B0FG8NWZ5R',
-    icon: 'amazon',
   },
   {
     label: 'Google Play',
     href: 'https://play.google.com/store/books/details/Beyond_Comfort_Zone?id=I01pEQAAQBAJ&hl=en_SG',
-    icon: 'google',
   },
 ];
+
+// Book cover: place your cover image at public/images/book-cover.jpg
+// (supports .jpg, .png, .webp — update the path below to match)
+const coverImage = '/images/book-cover.jpg';
 
 interface Props {
   variant?: 'homepage' | 'full';
@@ -32,19 +29,28 @@ const { variant = 'homepage' } = Astro.props;
 
     <div class="flex flex-col md:flex-row gap-12 md:gap-16 items-start">
 
-      <!-- Book cover — typographic -->
-      <div class="shrink-0 w-44 md:w-52" aria-hidden="true">
-        <div class="relative aspect-[2/3] bg-forest-900 rounded-sm shadow-[8px_8px_0_0_rgba(30,58,47,0.15)] flex flex-col justify-between p-6 overflow-hidden">
-          <!-- Subtle texture lines -->
+      <!-- Book cover -->
+      <div class="shrink-0 w-44 md:w-52">
+        <img
+          src={coverImage}
+          alt="Beyond Comfort Zone — book cover"
+          width="208"
+          height="312"
+          class="w-full rounded-sm shadow-[8px_8px_0_0_rgba(30,58,47,0.15)] object-cover"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        />
+        <!-- Typographic fallback (shown if image file is missing) -->
+        <div
+          class="relative aspect-[2/3] bg-forest-900 rounded-sm shadow-[8px_8px_0_0_rgba(30,58,47,0.15)] flex-col justify-between p-6 overflow-hidden hidden"
+          aria-hidden="true"
+        >
           <div class="absolute inset-0 opacity-[0.04]"
                style="background-image: repeating-linear-gradient(0deg, transparent, transparent 24px, #fff 24px, #fff 25px);">
           </div>
-          <!-- Top accent bar -->
           <div class="relative">
             <div class="w-8 h-0.5 bg-parchment-200 mb-6"></div>
             <p class="font-body text-[0.55rem] font-medium tracking-[0.2em] uppercase text-parchment-200 opacity-70">TY Koh</p>
           </div>
-          <!-- Title -->
           <div class="relative">
             <p class="font-display font-light text-xl leading-tight text-parchment-50">Beyond</p>
             <p class="font-display font-light text-xl leading-tight text-parchment-50">Comfort</p>
