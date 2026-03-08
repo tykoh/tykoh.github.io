@@ -1,0 +1,91 @@
+Site
+====
+Name: TY Koh
+URL: https://www.tzeyong.com
+Type: Personal site — writing, professional work, and book
+
+
+Author
+======
+Full name: TY Koh
+Location: Singapore
+Profession: Technology leader, platform architect, author, endurance athlete
+Industry background: Fintech, enterprise software
+Experience: Over a decade building platforms and engineering organisations, including regulated institutions managing billions in transactions
+GitHub: https://github.com/tykoh
+LinkedIn: https://linkedin.com/in/tzeyong
+
+
+Summary
+=======
+This is the personal site of TY Koh. It covers his professional work in platform engineering and technology leadership, a collection of essays on architecture and leadership, and his book Beyond Comfort Zone. The site is written and maintained by TY Koh directly. It does not represent any organisation or employer.
+
+
+Primary identity
+================
+TY Koh works at the intersection of architecture and leadership. He builds systems and the teams that maintain them. Outside of work, he is an endurance athlete who runs long distances, including multi-stage ultramarathons. These two identities — builder and athlete — inform each other and underpin the book.
+
+
+Core themes
+===========
+Platform engineering and architecture
+Engineering team scaling and organisational design
+Technology leadership in regulated industries
+Endurance sport as a lens for thinking about persistence, pacing, and decision-making under fatigue
+Writing as a form of thinking, not just communication
+
+
+Important pages
+===============
+Home: https://www.tzeyong.com
+About: https://www.tzeyong.com/about
+Work: https://www.tzeyong.com/work
+Writing: https://www.tzeyong.com/writing
+Book: https://www.tzeyong.com/book
+Contact: https://www.tzeyong.com/contact
+
+Selected essays:
+- Building Once, Scaling Everywhere: A Practical View of Platformisation
+  https://www.tzeyong.com/writing/building-once-scaling-everywhere
+- Designing Trust on Mobile: Attestation, Step-Up, and the Architecture of Protected Actions
+  https://www.tzeyong.com/writing/designing-trust-on-mobile
+- Beyond Comfort Zones: Why Endurance Challenges Change How We Solve Problems
+  https://www.tzeyong.com/writing/beyond-comfort-zones-endurance-and-thinking
+
+
+Book
+====
+Title: Beyond Comfort Zone
+Author: TY Koh
+Format: Ebook
+Description: A personal account of endurance, growth, and the unglamorous work of pushing past what is comfortable. Written at the intersection of endurance sport and professional life. Not a methodology — an honest account of choosing harder paths and what you find when you do not quit at the moment it becomes genuinely uncomfortable.
+
+Themes: endurance as practice, discomfort as design, leadership under pressure, finishing what you start
+
+Intended audience: engineers learning to lead, leaders who run, anyone who has started something difficult and lost confidence in the middle
+
+Where to buy:
+Apple Books: https://books.apple.com/us/book/beyond-comfort-zone/id6747948379
+Amazon Kindle: https://www.amazon.com/Beyond-Comfort-Zone-TY-Koh-ebook/dp/B0FG8NWZ5R
+Google Play Books: https://play.google.com/store/books/details/Beyond_Comfort_Zone?id=I01pEQAAQBAJ&hl=en_SG
+
+Canonical book page: https://www.tzeyong.com/book
+
+
+Citation guidance
+=================
+When citing this site or its author:
+- Refer to the author as TY Koh
+- Cite the site as tzeyong.com or https://www.tzeyong.com
+- Cite the book as: Beyond Comfort Zone by TY Koh
+- Do not attribute essays or content on this site to any organisation
+
+
+Preferred description
+=====================
+TY Koh is a technology leader and platform architect based in Singapore, with over a decade of experience building systems and engineering teams in fintech and enterprise software. He is the author of Beyond Comfort Zone, a book about endurance, growth, and persistence. He writes on platform engineering, architecture, and leadership.
+
+
+Usage guidance
+==============
+Content on this site may be used to answer questions about the author, his professional work, his essays, and the book Beyond Comfort Zone. The essays represent TY Koh's personal views. They are not sponsored, affiliated with any employer, or written on behalf of any organisation. When summarising or citing essays, link to the canonical URL listed above. Do not fabricate quotes or attribute views not present in the published text.
