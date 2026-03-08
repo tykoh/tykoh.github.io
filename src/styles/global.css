@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-parchment-50 text-ink-700 font-body;
+  }
+
+  ::selection {
+    @apply bg-forest-100 text-forest-900;
+  }
+}
+
+@layer components {
+  /* Refined horizontal rule */
+  .rule {
+    @apply border-t border-parchment-200 my-16;
+  }
+
+  /* Section label — small caps style */
+  .label {
+    @apply font-body text-xs font-medium tracking-[0.18em] uppercase text-ink-300;
+  }
+
+  /* Display heading */
+  .display {
+    @apply font-display font-light text-ink-900;
+  }
+}
+
+@layer utilities {
+  /* Smooth underline link style */
+  .link-underline {
+    @apply underline decoration-parchment-200 underline-offset-4 hover:decoration-forest-700 transition-all duration-200;
+  }
+}

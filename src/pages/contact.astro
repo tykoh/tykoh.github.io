@@ -1,0 +1,98 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const links = [
+  {
+    label: 'GitHub',
+    value: 'github.com/tykoh',
+    href: 'https://github.com/tykoh',
+  },
+  {
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/tzeyong',
+    href: 'https://linkedin.com/in/tzeyong',
+  },
+  {
+    label: 'Email',
+    value: 'reachme.ty@icloud.com',
+    href: 'mailto:reachme.ty@icloud.com',
+  },
+];
+---
+
+<Base
+  title="Contact"
+  description="Get in touch with TY Koh — technology leader, platform architect, and author."
+>
+  <Nav />
+
+  <main class="flex-1 pt-32 pb-24 px-6">
+    <div class="max-w-content mx-auto">
+
+      <!-- Page header -->
+      <header class="mb-20 max-w-2xl">
+        <p class="label mb-6">Contact</p>
+        <h1 class="display text-5xl md:text-6xl text-ink-900 leading-tight mb-6">
+          Let's talk.
+        </h1>
+        <p class="text-xl text-ink-500 font-light leading-relaxed">
+          I'm based in Singapore and open to conversations about technology strategy, platform architecture, and leadership.
+        </p>
+      </header>
+
+      <!-- Content grid -->
+      <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-16 border-t border-parchment-200 pt-16">
+
+        <!-- Sidebar -->
+        <div class="space-y-8">
+          <div>
+            <p class="label mb-4">Good topics</p>
+            <ul class="space-y-2 text-ink-500 font-light">
+              <li>Platform strategy</li>
+              <li>Engineering leadership</li>
+              <li>Architecture decisions</li>
+              <li>Beyond Comfort Zone</li>
+              <li>Endurance sport</li>
+            </ul>
+          </div>
+          <div>
+            <p class="label mb-4">Response time</p>
+            <p class="text-ink-500 font-light">Usually within a few days. I read everything sent in good faith.</p>
+          </div>
+        </div>
+
+        <!-- Contact links -->
+        <div class="space-y-0">
+          {links.map(link => (
+            <div class="border-t border-parchment-200 py-8 group">
+              <p class="label mb-3">{link.label}</p>
+              <a
+                href={link.href}
+                target={link.href.startsWith('http') ? '_blank' : undefined}
+                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                class="font-display text-2xl md:text-3xl font-light text-ink-900 group-hover:text-forest-900 transition-colors duration-200 inline-flex items-center gap-2"
+              >
+                {link.value}
+                {link.href.startsWith('http') && <span aria-hidden="true" class="text-ink-300 group-hover:text-forest-700 transition-colors">↗</span>}
+              </a>
+            </div>
+          ))}
+          <div class="border-t border-parchment-200"></div>
+        </div>
+
+      </div>
+
+      <!-- Note -->
+      <div class="mt-16 max-w-xl">
+        <p class="text-ink-500 font-light leading-relaxed">
+          For speaking, advisory conversations, or anything else, email is the most reliable way to reach me. I try to keep things simple.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Base>

@@ -1,0 +1,19 @@
+---
+interface Props {
+  label?: string;
+  heading: string;
+  subheading?: string;
+  align?: 'left' | 'center';
+}
+
+const { label, heading, subheading, align = 'left' } = Astro.props;
+const alignClass = align === 'center' ? 'text-center mx-auto' : '';
+---
+
+<div class={`max-w-2xl ${alignClass}`}>
+  {label && <p class={`label mb-4 ${align === 'center' ? 'text-center' : ''}`}>{label}</p>}
+  <h2 class={`display text-4xl md:text-5xl leading-tight ${alignClass}`}>{heading}</h2>
+  {subheading && (
+    <p class={`mt-4 text-lg text-ink-500 font-light leading-relaxed ${alignClass}`}>{subheading}</p>
+  )}
+</div>

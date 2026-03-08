@@ -1,0 +1,125 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base
+  title="About"
+  description="About TY Koh — technology leader, platform architect, author, and endurance athlete based in Singapore."
+>
+  <Nav />
+
+  <main class="flex-1 pt-32 pb-24 px-6">
+    <div class="max-w-content mx-auto">
+
+      <!-- Page header -->
+      <header class="mb-20 max-w-3xl">
+        <p class="label mb-6">About</p>
+        <h1 class="display text-5xl md:text-6xl text-ink-900 leading-tight mb-8">
+          Architect, builder,<br class="hidden md:block" /> and author.
+        </h1>
+        <p class="text-xl text-ink-500 font-light leading-relaxed">
+          I build systems for a living and push physical limits for perspective.
+        </p>
+      </header>
+
+      <!-- Two-column content -->
+      <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-16 md:gap-24 border-t border-parchment-200 pt-16">
+
+        <!-- Sidebar -->
+        <aside class="space-y-10">
+          <div>
+            <p class="label mb-4">Location</p>
+            <p class="text-ink-700 font-light">Singapore</p>
+          </div>
+          <div>
+            <p class="label mb-4">Elsewhere</p>
+            <ul class="space-y-2">
+              <li>
+                <a href="https://github.com/tykoh" target="_blank" rel="noopener noreferrer" class="text-ink-700 font-light hover:text-forest-900 transition-colors">
+                  GitHub ↗
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/tzeyong" target="_blank" rel="noopener noreferrer" class="text-ink-700 font-light hover:text-forest-900 transition-colors">
+                  LinkedIn ↗
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="label mb-4">Interests</p>
+            <ul class="space-y-1 text-ink-500 font-light">
+              <li>Platform architecture</li>
+              <li>Engineering culture</li>
+              <li>Endurance sport</li>
+              <li>Writing</li>
+              <li>Systems thinking</li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Main content -->
+        <div class="space-y-10 text-ink-700 font-light leading-[1.85] text-[1.0625rem]">
+
+          <p>
+            I'm a technology leader with over a decade of experience building platforms and engineering organisations — primarily in fintech and enterprise software. I've worked across the full arc of a company's growth, from scrappy early-stage startups to regulated institutions managing billions in transactions.
+          </p>
+
+          <p>
+            My work sits at the intersection of architecture and leadership. I care as much about how systems are designed as how the teams building them are structured. The two are inseparable: a fragmented organisation produces fragmented software, and the reverse is equally true.
+          </p>
+
+          <div class="border-l-2 border-forest-900 pl-6 my-10">
+            <p class="font-display text-2xl font-light text-ink-900 leading-snug">
+              "Good architecture is not about the decisions you make. It's about the ones you avoid making prematurely."
+            </p>
+          </div>
+
+          <p>
+            I've led engineering teams through rapid scale, regulatory change, and the recurring tension between speed and rigour. That tension never fully resolves — but it can be managed well, and managing it well is where most of the real engineering leadership happens.
+          </p>
+
+          <h2 class="display text-3xl text-ink-900 pt-6">Beyond the terminal</h2>
+
+          <p>
+            Outside of work, I'm an endurance athlete. I run long distances, sometimes very long ones. There's something clarifying about committing to something difficult and unambiguous — no pull requests, no product reviews, just you and a finish line that doesn't move.
+          </p>
+
+          <p>
+            That practice has shaped how I think about persistence, pacing, and the unglamorous middle of hard things. It's the same discipline I bring to building platforms and, eventually, to writing <em>Beyond Comfort Zone</em>.
+          </p>
+
+          <h2 class="display text-3xl text-ink-900 pt-6">The book</h2>
+
+          <p>
+            <em>Beyond Comfort Zone</em> is a personal account of what it means to stop optimising for comfort. Written at the intersection of endurance sport and professional life, it explores growth not as a productivity strategy but as a practice — something you have to show up for, repeatedly, in conditions that are less than ideal.
+          </p>
+
+          <p>
+            <a href="/book" class="text-forest-900 hover:text-forest-700 underline underline-offset-4 decoration-forest-100 hover:decoration-forest-700 transition-all duration-200">
+              Learn more about the book →
+            </a>
+          </p>
+
+          <h2 class="display text-3xl text-ink-900 pt-6">What I'm thinking about</h2>
+
+          <p>
+            I write occasionally — about platform design, engineering leadership, and the parallels between sport and building organisations. Not prolifically. Only when I have something to say.
+          </p>
+
+          <p>
+            <a href="/writing" class="text-forest-900 hover:text-forest-700 underline underline-offset-4 decoration-forest-100 hover:decoration-forest-700 transition-all duration-200">
+              Read the writing →
+            </a>
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Base>

@@ -1,0 +1,105 @@
+---
+const purchaseLinks = [
+  {
+    label: 'Apple Books',
+    href: 'https://books.apple.com/us/book/beyond-comfort-zone/id6747948379',
+    icon: 'apple',
+  },
+  {
+    label: 'Amazon Kindle',
+    href: 'https://www.amazon.com/Beyond-Comfort-Zone-TY-Koh-ebook/dp/B0FG8NWZ5R',
+    icon: 'amazon',
+  },
+  {
+    label: 'Google Play',
+    href: 'https://play.google.com/store/books/details/Beyond_Comfort_Zone?id=I01pEQAAQBAJ&hl=en_SG',
+    icon: 'google',
+  },
+];
+
+interface Props {
+  variant?: 'homepage' | 'full';
+}
+const { variant = 'homepage' } = Astro.props;
+---
+
+<section class={variant === 'full' ? 'py-section' : 'py-16 md:py-20'} aria-label="Book: Beyond Comfort Zone">
+  <div class="max-w-content mx-auto px-6">
+
+    {variant === 'full' && (
+      <p class="label mb-6">The Book</p>
+    )}
+
+    <div class="flex flex-col md:flex-row gap-12 md:gap-16 items-start">
+
+      <!-- Book cover — typographic -->
+      <div class="shrink-0 w-44 md:w-52" aria-hidden="true">
+        <div class="relative aspect-[2/3] bg-forest-900 rounded-sm shadow-[8px_8px_0_0_rgba(30,58,47,0.15)] flex flex-col justify-between p-6 overflow-hidden">
+          <!-- Subtle texture lines -->
+          <div class="absolute inset-0 opacity-[0.04]"
+               style="background-image: repeating-linear-gradient(0deg, transparent, transparent 24px, #fff 24px, #fff 25px);">
+          </div>
+          <!-- Top accent bar -->
+          <div class="relative">
+            <div class="w-8 h-0.5 bg-parchment-200 mb-6"></div>
+            <p class="font-body text-[0.55rem] font-medium tracking-[0.2em] uppercase text-parchment-200 opacity-70">TY Koh</p>
+          </div>
+          <!-- Title -->
+          <div class="relative">
+            <p class="font-display font-light text-xl leading-tight text-parchment-50">Beyond</p>
+            <p class="font-display font-light text-xl leading-tight text-parchment-50">Comfort</p>
+            <p class="font-display font-light text-xl leading-tight text-parchment-50">Zone</p>
+            <div class="w-8 h-0.5 bg-parchment-200 mt-4 opacity-70"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book info -->
+      <div class="flex-1 max-w-lg">
+        {variant === 'homepage' && (
+          <p class="label mb-4">Author</p>
+        )}
+        <h2 class="display text-3xl md:text-4xl text-ink-900 mb-4">
+          {variant === 'homepage' ? (
+            <a href="/book" class="hover:text-forest-900 transition-colors duration-200">Beyond Comfort Zone</a>
+          ) : 'Beyond Comfort Zone'}
+        </h2>
+        <p class="text-ink-500 font-light leading-relaxed mb-2">
+          A personal account of what happens when you stop optimising for comfort and start testing what you're actually made of — through endurance racing, career transitions, and the unglamorous middle of hard things.
+        </p>
+        {variant === 'homepage' && (
+          <p class="text-ink-500 font-light leading-relaxed mb-8">
+            Written for anyone who has chosen a harder path and needed a reason to keep going.
+          </p>
+        )}
+        {variant === 'full' && (
+          <p class="text-ink-500 font-light leading-relaxed mb-8 mt-4">
+            The book draws from years of balancing technical leadership with endurance sport — ultramarathons, long-distance rides, and the mental architecture required to finish things that most people quit. It is not a self-help book. It is an honest reflection on discomfort as a deliberate practice.
+          </p>
+        )}
+
+        <!-- Purchase links -->
+        <div class="flex flex-wrap gap-4 items-center">
+          {purchaseLinks.map(link => (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-4 py-2.5 border border-ink-900 text-ink-900 font-body text-sm font-medium tracking-wide hover:bg-ink-900 hover:text-parchment-50 transition-all duration-200 rounded-sm"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+
+        {variant === 'homepage' && (
+          <p class="mt-6">
+            <a href="/book" class="label text-forest-900 hover:text-forest-700 transition-colors">
+              Learn more about the book →
+            </a>
+          </p>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

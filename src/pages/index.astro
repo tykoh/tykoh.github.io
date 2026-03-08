@@ -1,0 +1,196 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import BookFeature from '../components/BookFeature.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import WritingCard from '../components/WritingCard.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('writing');
+const featuredPosts = allPosts
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 3);
+
+const featuredProjects = [
+  {
+    title: 'Enterprise Platform Architecture',
+    description: 'Designed and led the build-out of a multi-tenant platform serving thousands of businesses — spanning API infrastructure, identity, data pipelines, and developer tooling. Took the system from a fragmented monolith to a modular platform used across markets.',
+    tags: ['Platform', 'Architecture', 'Leadership'],
+    year: '2022 – 2024',
+  },
+  {
+    title: 'Fintech Risk & Compliance Systems',
+    description: 'Built internal risk management tooling for a regulated fintech company, translating complex compliance requirements into engineering constraints without slowing down product velocity. The system handled transaction monitoring, audit trails, and regulatory reporting.',
+    tags: ['Fintech', 'Risk Management', 'Systems Design'],
+    year: '2019 – 2022',
+  },
+  {
+    title: 'Engineering Culture & Team Scaling',
+    description: 'Scaled engineering organisations from early-stage startup to 50+ engineers — establishing hiring processes, technical values, and a culture that retained strong engineers through rapid growth and organisational change.',
+    tags: ['Leadership', 'Org Design', 'Culture'],
+    year: '2018 – Present',
+  },
+];
+---
+
+<Base title="TY Koh" description="TY Koh — Technology leader, platform architect, and author of Beyond Comfort Zone.">
+  <Nav />
+
+  <main class="flex-1">
+
+    <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+    <section class="pt-40 pb-24 md:pt-48 md:pb-32 px-6" aria-label="Introduction">
+      <div class="max-w-content mx-auto">
+        <div class="max-w-3xl">
+          <p class="label mb-6">Technology · Architecture · Writing</p>
+          <h1 class="display text-5xl md:text-7xl text-ink-900 leading-none mb-8">
+            TY Koh
+          </h1>
+          <p class="text-xl md:text-2xl text-ink-500 font-light leading-relaxed max-w-2xl mb-10">
+            Building platforms at scale. Writing beyond the comfort zone.
+          </p>
+          <p class="text-base md:text-lg text-ink-500 font-light leading-relaxed max-w-xl mb-12">
+            Technology leader and platform architect with over a decade of experience building systems, scaling engineering teams, and navigating the intersection of speed and rigour in regulated industries. Based in Singapore.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-6">
+            <a
+              href="/about"
+              class="inline-flex items-center font-body text-sm font-medium tracking-wide px-6 py-3 bg-ink-900 text-parchment-50 hover:bg-forest-900 transition-colors duration-200 rounded-sm"
+            >
+              About me
+            </a>
+            <a
+              href="/work"
+              class="inline-flex items-center font-body text-sm font-medium tracking-wide text-ink-900 hover:text-forest-900 transition-colors duration-200 border-b border-parchment-200 hover:border-forest-700 pb-0.5"
+            >
+              View work →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Thin rule -->
+    <div class="border-t border-parchment-200 mx-6"></div>
+
+    <!-- ═══════════════════════════════ BOOK ═══════════════════════════════ -->
+    <div class="bg-parchment-100 border-b border-parchment-200">
+      <BookFeature variant="homepage" />
+    </div>
+
+    <!-- ═══════════════════════════ FEATURED WORK ═══════════════════════ -->
+    <section class="py-section px-6" aria-labelledby="work-heading">
+      <div class="max-w-content mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-4">
+          <SectionHeader
+            label="Selected Work"
+            heading="What I've built"
+            subheading="Platform initiatives, technical leadership, and systems designed to last."
+          />
+          <a href="/work" class="label text-forest-900 hover:text-forest-700 transition-colors shrink-0 mb-2">
+            All work →
+          </a>
+        </div>
+
+        <div class="mt-8">
+          {featuredProjects.map(project => (
+            <ProjectCard {...project} />
+          ))}
+          <div class="border-t border-parchment-200"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="border-t border-parchment-200 mx-6"></div>
+
+    <!-- ═══════════════════════════ FEATURED WRITING ═══════════════════════ -->
+    <section class="py-section px-6" aria-labelledby="writing-heading">
+      <div class="max-w-content mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-4">
+          <SectionHeader
+            label="Writing"
+            heading="Recent essays"
+            subheading="On technology, leadership, systems thinking, and endurance."
+          />
+          <a href="/writing" class="label text-forest-900 hover:text-forest-700 transition-colors shrink-0 mb-2">
+            All writing →
+          </a>
+        </div>
+
+        <div class="mt-8">
+          {featuredPosts.length > 0 ? (
+            featuredPosts.map(post => (
+              <WritingCard
+                title={post.data.title}
+                description={post.data.description}
+                href={`/writing/${post.slug}`}
+                pubDate={post.data.pubDate}
+                tags={post.data.tags}
+                readingTime={post.data.readingTime}
+              />
+            ))
+          ) : (
+            <div class="border-t border-parchment-200 py-8">
+              <p class="text-ink-300 font-light">Essays coming soon.</p>
+            </div>
+          )}
+          {featuredPosts.length > 0 && <div class="border-t border-parchment-200"></div>}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ IDENTITY STRIP ═══════════════════════ -->
+    <section class="bg-ink-900 py-20 px-6" aria-label="Identity">
+      <div class="max-w-content mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+          <div>
+            <p class="label text-parchment-300 mb-4">Architect</p>
+            <p class="font-display text-2xl font-light text-parchment-50 leading-snug">
+              Systems built to outlast the team that built them.
+            </p>
+          </div>
+          <div>
+            <p class="label text-parchment-300 mb-4">Author</p>
+            <p class="font-display text-2xl font-light text-parchment-50 leading-snug">
+              Writing as a form of thinking, not just communication.
+            </p>
+          </div>
+          <div>
+            <p class="label text-parchment-300 mb-4">Endurance athlete</p>
+            <p class="font-display text-2xl font-light text-parchment-50 leading-snug">
+              Discipline built in training. Applied everywhere else.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ CONTACT CTA ═══════════════════════════ -->
+    <section class="py-section px-6" aria-label="Contact">
+      <div class="max-w-content mx-auto">
+        <div class="max-w-xl">
+          <p class="label mb-4">Get in touch</p>
+          <h2 class="display text-4xl md:text-5xl text-ink-900 mb-6">
+            Worth a conversation?
+          </h2>
+          <p class="text-ink-500 font-light leading-relaxed mb-8">
+            I'm open to conversations about technology strategy, platform architecture, and leadership. Occasionally available for advisory roles and speaking.
+          </p>
+          <a
+            href="/contact"
+            class="inline-flex items-center font-body text-sm font-medium tracking-wide px-6 py-3 border border-ink-900 text-ink-900 hover:bg-ink-900 hover:text-parchment-50 transition-all duration-200 rounded-sm"
+          >
+            Say hello →
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Base>
