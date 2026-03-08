@@ -45,8 +45,6 @@ Book: https://www.tzeyong.com/book
 Contact: https://www.tzeyong.com/contact
 
 Selected essays:
-- Building Once, Scaling Everywhere: A Practical View of Platformisation
-  https://www.tzeyong.com/writing/building-once-scaling-everywhere
 - Designing Trust on Mobile: Attestation, Step-Up, and the Architecture of Protected Actions
   https://www.tzeyong.com/writing/designing-trust-on-mobile
 - Beyond Comfort Zones: Why Endurance Challenges Change How We Solve Problems
