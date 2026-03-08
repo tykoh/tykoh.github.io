@@ -1,0 +1,118 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import BookFeature from '../components/BookFeature.astro';
+---
+
+<Base
+  title="Beyond Comfort Zone"
+  description="Beyond Comfort Zone by TY Koh — a personal account of endurance, growth, and pushing limits. Available on Apple Books, Amazon Kindle, and Google Play."
+>
+  <Nav />
+
+  <main class="flex-1 pt-32 pb-24 px-6">
+    <div class="max-w-content mx-auto">
+
+      <!-- Page header -->
+      <header class="mb-16 max-w-2xl">
+        <p class="label mb-6">The Book</p>
+        <h1 class="display text-5xl md:text-6xl text-ink-900 leading-tight mb-6">
+          Beyond Comfort Zone
+        </h1>
+        <p class="text-xl text-ink-500 font-light leading-relaxed">
+          A personal account of endurance, growth, and the unglamorous work of pushing past what's comfortable.
+        </p>
+      </header>
+
+      <!-- Book feature block (full variant) -->
+      <div class="border-t border-parchment-200">
+        <BookFeature variant="full" />
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-parchment-200 my-16"></div>
+
+      <!-- About the book — editorial -->
+      <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-16">
+        <div>
+          <p class="label mb-4">What it's about</p>
+        </div>
+        <div class="space-y-6 text-ink-700 font-light leading-[1.85] text-[1.0625rem] max-w-prose">
+          <p>
+            This book began as a personal reckoning. After years of pushing limits in endurance sport — long-distance runs, training blocks that didn't go to plan, and the particular loneliness of hard efforts — I found myself drawing parallels to how I approached everything else: the way I led teams, the way I handled setbacks, the way I defined success.
+          </p>
+          <p>
+            <em>Beyond Comfort Zone</em> is not a methodology. It's an honest account of what happens when you deliberately choose harder paths — and what you find when you don't quit at the moment it becomes genuinely uncomfortable.
+          </p>
+          <p>
+            The book is for anyone who has started something difficult and lost confidence in the middle. For engineers learning to lead. For leaders running their first ultramarathon. For anyone who suspects that the version of themselves on the other side of discomfort is worth the distance.
+          </p>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-parchment-200 my-16"></div>
+
+      <!-- Themes -->
+      <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-16">
+        <div>
+          <p class="label mb-4">Themes</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          {[
+            { heading: 'Endurance as practice', body: 'What long-distance sport teaches about patience, pacing, and showing up when the result is uncertain.' },
+            { heading: 'Discomfort as design', body: 'How choosing harder paths — in work and sport — builds a different kind of resilience than optimising for comfort.' },
+            { heading: 'Leadership under pressure', body: "The parallels between managing a race that's going wrong and managing a team through a crisis." },
+            { heading: 'Finishing what you start', body: 'On commitment, consistency, and the quiet discipline of seeing things through.' },
+          ].map(theme => (
+            <div class="border-l-2 border-parchment-200 pl-5">
+              <p class="font-body font-medium text-ink-900 mb-2">{theme.heading}</p>
+              <p class="text-ink-500 font-light leading-relaxed text-sm">{theme.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-parchment-200 my-16"></div>
+
+      <!-- CTA -->
+      <div class="max-w-xl">
+        <p class="label mb-4">Get the book</p>
+        <p class="text-ink-500 font-light leading-relaxed mb-8">
+          Available as an ebook on all major platforms. No special equipment required — just somewhere quiet and the willingness to sit with an uncomfortable idea or two.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="https://books.apple.com/us/book/beyond-comfort-zone/id6747948379"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-5 py-3 bg-ink-900 text-parchment-50 font-body text-sm font-medium tracking-wide hover:bg-forest-900 transition-colors duration-200 rounded-sm"
+          >
+            Apple Books
+          </a>
+          <a
+            href="https://www.amazon.com/Beyond-Comfort-Zone-TY-Koh-ebook/dp/B0FG8NWZ5R"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-5 py-3 border border-ink-900 text-ink-900 font-body text-sm font-medium tracking-wide hover:bg-ink-900 hover:text-parchment-50 transition-all duration-200 rounded-sm"
+          >
+            Amazon Kindle
+          </a>
+          <a
+            href="https://play.google.com/store/books/details/Beyond_Comfort_Zone?id=I01pEQAAQBAJ&hl=en_SG"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-5 py-3 border border-ink-900 text-ink-900 font-body text-sm font-medium tracking-wide hover:bg-ink-900 hover:text-parchment-50 transition-all duration-200 rounded-sm"
+          >
+            Google Play
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Base>

@@ -1,0 +1,97 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+
+const projects = [
+  {
+    title: 'Enterprise Platform Architecture',
+    description: 'Led the redesign of a multi-tenant platform serving thousands of businesses across Southeast Asia. Moved the system from a tightly coupled monolith to a modular, domain-driven architecture with clear API contracts, independent deployment pipelines, and a self-serve developer experience.',
+    tags: ['Platform Design', 'Domain-Driven Design', 'API Architecture', 'Multi-tenancy'],
+    year: '2022 – 2024',
+  },
+  {
+    title: 'Payment Infrastructure Rebuild',
+    description: 'Architected and oversaw the rebuild of a payment processing backbone handling hundreds of millions in monthly transaction volume. Focused on idempotency, reliability, and audit — systems where correctness matters more than throughput.',
+    tags: ['Payments', 'Distributed Systems', 'Reliability Engineering'],
+    year: '2021 – 2023',
+  },
+  {
+    title: 'Fintech Risk & Compliance Systems',
+    description: 'Designed internal risk management tooling for a regulated fintech, translating compliance requirements into engineering constraints. The system handled real-time transaction monitoring, automated suspicious activity reporting, and audit trail generation at scale.',
+    tags: ['Fintech', 'Compliance', 'Risk Management', 'Event Sourcing'],
+    year: '2019 – 2022',
+  },
+  {
+    title: 'Data Platform & Analytics Infrastructure',
+    description: 'Built an internal data platform that gave product and risk teams access to clean, well-modelled data without depending on the engineering team. Reduced time-to-insight from weeks to hours for most analytical queries.',
+    tags: ['Data Engineering', 'Analytics', 'Internal Tooling'],
+    year: '2020 – 2021',
+  },
+  {
+    title: 'Engineering Culture & Org Scaling',
+    description: 'Grew and shaped engineering organisations from single-digit teams to 50+ engineers across multiple product squads — establishing hiring frameworks, technical values, incident culture, and a career ladder that gave engineers a reason to stay.',
+    tags: ['Engineering Leadership', 'Team Scaling', 'Org Design', 'Culture'],
+    year: '2018 – Present',
+  },
+  {
+    title: 'Developer Experience & Internal Tooling',
+    description: 'Built internal developer tooling to reduce friction across the engineering lifecycle — CI/CD standardisation, feature flag infrastructure, secrets management, and local development environments that mirror production faithfully.',
+    tags: ['DevEx', 'CI/CD', 'Internal Tooling', 'Platform Engineering'],
+    year: '2022 – 2023',
+  },
+];
+---
+
+<Base
+  title="Work"
+  description="Selected projects and initiatives by TY Koh — platform architecture, fintech systems, and engineering leadership."
+>
+  <Nav />
+
+  <main class="flex-1 pt-32 pb-24 px-6">
+    <div class="max-w-content mx-auto">
+
+      <!-- Page header -->
+      <header class="mb-20 max-w-3xl">
+        <SectionHeader
+          label="Work"
+          heading="Things I've built"
+          subheading="Platform initiatives, technical leadership, and systems designed for durability and scale. Specifics are limited by confidentiality — these are representative summaries."
+        />
+      </header>
+
+      <!-- Project list -->
+      <div>
+        {projects.map(project => (
+          <ProjectCard {...project} />
+        ))}
+        <div class="border-t border-parchment-200"></div>
+      </div>
+
+      <!-- Philosophy note -->
+      <div class="mt-20 max-w-2xl">
+        <p class="label mb-4">On the work</p>
+        <p class="text-ink-500 font-light leading-relaxed mb-4">
+          The projects above represent a slice of the work. The common thread: systems that have to keep running, teams that have to keep growing, and the belief that architecture is as much about what you decide <em>not</em> to build as what you do.
+        </p>
+        <p class="text-ink-500 font-light leading-relaxed">
+          If you're thinking about platform strategy, technical leadership, or org design, I'm occasionally available for advisory conversations.
+        </p>
+        <p class="mt-6">
+          <a
+            href="/contact"
+            class="label text-forest-900 hover:text-forest-700 transition-colors"
+          >
+            Get in touch →
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Base>

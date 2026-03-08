@@ -1,0 +1,56 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import WritingCard from '../../components/WritingCard.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('writing');
+const posts = allPosts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+---
+
+<Base
+  title="Writing"
+  description="Essays by TY Koh on technology leadership, platform architecture, systems thinking, and endurance."
+>
+  <Nav />
+
+  <main class="flex-1 pt-32 pb-24 px-6">
+    <div class="max-w-content mx-auto">
+
+      <!-- Page header -->
+      <header class="mb-20">
+        <SectionHeader
+          label="Writing"
+          heading="Essays & reflections"
+          subheading="On architecture, leadership, systems, and the occasional endurance metaphor. Written when there's something worth saying."
+        />
+      </header>
+
+      <!-- Post list -->
+      {posts.length > 0 ? (
+        <div>
+          {posts.map(post => (
+            <WritingCard
+              title={post.data.title}
+              description={post.data.description}
+              href={`/writing/${post.slug}`}
+              pubDate={post.data.pubDate}
+              tags={post.data.tags}
+              readingTime={post.data.readingTime}
+            />
+          ))}
+          <div class="border-t border-parchment-200"></div>
+        </div>
+      ) : (
+        <div class="border-t border-parchment-200 py-16">
+          <p class="text-ink-300 font-light">Essays are being written. Check back soon.</p>
+        </div>
+      )}
+
+    </div>
+  </main>
+
+  <Footer />
+</Base>

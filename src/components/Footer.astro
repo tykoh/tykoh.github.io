@@ -1,0 +1,48 @@
+---
+const year = new Date().getFullYear();
+
+const links = [
+  { label: 'GitHub',   href: 'https://github.com/tykoh',             external: true },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/tzeyong',       external: true },
+  { label: 'Writing',  href: '/writing',                              external: false },
+  { label: 'Book',     href: '/book',                                 external: false },
+];
+---
+
+<footer class="border-t border-parchment-200 bg-parchment-100 mt-auto">
+  <div class="max-w-content mx-auto px-6 py-12">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
+
+      <!-- Identity -->
+      <div>
+        <p class="font-display text-lg font-light text-ink-900">TY Koh</p>
+        <p class="label mt-1">Technology leader · Architect · Author</p>
+      </div>
+
+      <!-- Nav links -->
+      <ul class="flex flex-wrap gap-x-8 gap-y-3" role="list">
+        {links.map(link => (
+          <li>
+            <a
+              href={link.href}
+              target={link.external ? '_blank' : undefined}
+              rel={link.external ? 'noopener noreferrer' : undefined}
+              class="label hover:text-ink-700 transition-colors duration-200"
+            >
+              {link.label}
+              {link.external && (
+                <span aria-hidden="true" class="ml-0.5 opacity-50">↗</span>
+              )}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-parchment-200 flex flex-col md:flex-row md:items-center justify-between gap-2">
+      <p class="label">© {year} TY Koh. All rights reserved.</p>
+      <p class="label">Built with <a href="https://astro.build" class="hover:text-ink-700 transition-colors" target="_blank" rel="noopener noreferrer">Astro</a> · Hosted on GitHub Pages</p>
+    </div>
+  </div>
+</footer>
