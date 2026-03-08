@@ -12,7 +12,7 @@ const purchaseLinks = [
 
 // Book cover: place your cover image at public/images/book-cover.jpg
 // (supports .jpg, .png, .webp — update the path below to match)
-const coverImage = '/images/book-cover.jpg';
+const coverImage = '/images/IMG_1261.jpeg';
 
 interface Props {
   variant?: 'homepage' | 'full';
@@ -100,7 +100,7 @@ const { variant = 'homepage' } = Astro.props;
 
         {variant === 'homepage' && (
           <p class="mt-6">
-            <a href="/book" class="label text-forest-900 hover:text-forest-700 transition-colors">
+            <a href="/book" class="font-body text-sm font-medium text-forest-900 hover:text-forest-700 transition-colors duration-200 underline underline-offset-4 decoration-forest-100 hover:decoration-forest-700">
               Learn more about the book →
             </a>
           </p>
