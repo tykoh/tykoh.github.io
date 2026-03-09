@@ -76,7 +76,7 @@ Professional and organisational capability tends to build the same way. A team t
 
 ## Closing Reflection
 
-The book *Beyond Comfort Zone* is an attempt to articulate what happens when you commit to hard things voluntarily and repeatedly — what changes in you through that commitment, and how those changes manifest in the way you approach work and the way you think about difficulty. The endurance experiences described in this article sit at the centre of that project.
+The book *[Beyond Comfort Zone](/book)* is an attempt to articulate what happens when you commit to hard things voluntarily and repeatedly — what changes in you through that commitment, and how those changes manifest in the way you approach work and the way you think about difficulty. The endurance experiences described in this article sit at the centre of that project.
 
 The point is not that everyone should run ultramarathons, or that athletic achievement is a useful measure of anything beyond itself. The point is more modest and, I think, more durable: voluntary difficulty, engaged with honestly rather than romanticised, produces a different quality of thinking about difficulty in general. The person who has spent many hours somewhere very uncomfortable, making decisions when they would rather stop, tends to approach the next difficult thing with a different character of patience than they had before. Not because suffering is inherently instructive — it is not — but because the practice of continuing deliberately, without certainty, without a clear signal that continuing is the right decision, is itself a form of training.
 
